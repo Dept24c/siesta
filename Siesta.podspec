@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Siesta"
-  s.version      = "1.4.0"
+  s.version      = "1.5.0"
   s.summary      = "Swift REST client library"
 
   s.description  = <<-DESC
@@ -68,11 +68,13 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.11"
+  s.tvos.deployment_target = "9.0"
 
-  s.source = { :git => "https://github.com/bustoutsolutions/siesta.git", :tag => "1.4.0" }
+  s.source = { :git => "https://github.com/bustoutsolutions/siesta.git", :tag => "1.5.0" }
 
+#s.resources = "Source/**/*.xib" #<<-- remove xibs
   s.subspec "Core" do |s|
-    s.source_files = "Source/Siesta/**/*"
+    s.source_files = "Source/**/*.swift" #<<-- only copy swift files as source (WAS pulling xibs)
     s.exclude_files = "**/Info*.plist"
   end
 
@@ -90,5 +92,4 @@ Pod::Spec.new do |s|
   end
 
   s.default_subspecs = 'Core'
-
 end

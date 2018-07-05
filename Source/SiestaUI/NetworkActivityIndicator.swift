@@ -13,13 +13,6 @@ import UIKit
 
 // Tracks the number of requests in progress across all Siesta services
 private var requestsInProgress = 0
-    {
-    didSet
-        {
-        UIApplication.shared.isNetworkActivityIndicatorVisible =
-            requestsInProgress > 0
-        }
-    }
 
 private func requestStarted()
     { requestsInProgress += 1 }
